@@ -91,7 +91,7 @@ export default class LoadTodos {
     const checkboxInput = document.querySelectorAll('.checkbox');
     const checkLabel = document.querySelectorAll('.checkbox-label');
     
-    for(let a = 0; a<loadedTodos.length;a +=1){
+    loadedTodos.array.forEach(element => {
       checkboxInput[a].addEventListener('change', () => {
         if (checkboxInput[a].checked) {
           checkLabel[a].classList.add('line-over');
@@ -100,8 +100,7 @@ export default class LoadTodos {
           checkLabel[a].classList.remove('line-over');
           CheckboxAction.checkboxAction(a,false);
         }
-        
       });
-    }
+    });
   }
 }
